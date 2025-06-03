@@ -1,0 +1,79 @@
+name: Render and Publish Quarto Site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Debug repository contents
+        run: |
+          echo "Listing repository contents:"
+          ls -la
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: '1.5.57'
+
+      - name: Debug Quarto installation
+        run: |
+          quarto --version
+          quarto check
+
+      - name: Set up Python (if needed)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies (if needed)
+        run: |
+          pip install jupyter
+          pip install -r requirements.txt || echo "No requirements.txt found"
+
+      - name: Render Quarto site
+        run: |
+          quarto render --verbose
+
+      - name: Debug site contents
+        run: |
+          echo "Listing _site contents:"
+          ls -la _site || echo "_site directory not found"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

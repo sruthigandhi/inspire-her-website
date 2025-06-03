@@ -1,0 +1,136 @@
+/* css styles */
+
+:root {
+  --inspire1: #ff6f4b;  /* Coral-orange */
+  --inspire2: #fd4c55;  /* Bright coral-red */
+  --inspire3: #e13661;  /* Raspberry pink */
+  --inspire4: #c1246b;  /* Magenta-pink */
+  --inspire5: #a11477;  /* Deep fuchsia */
+}
+
+/* Optional: set body font and text color */
+.white-text {
+  color: white;
+}
+.black-text {
+  color: black;
+}
+.red-text {
+  color: red;
+}
+
+
+/* Boostrap navbar custom colors */
+.navbar {
+  background-color: var(--inspire5);
+  height: 60px; 
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+  color: #fff !important;
+}
+.navbar-nav {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.navbar-brand {
+    display: flex;
+    position: absolute;   
+}
+
+.navbar-brand img { 
+  max-height: 100px;
+  width: auto;
+}
+
+/*BUTTONS*/
+
+.btn-primary {
+  background-color: var(--inspire1);
+  border-color: var(--inspire1);
+  padding: 10px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        margin:10px
+}
+
+.btn-primary:hover {
+  background-color: var(--inspire2);
+  border-color: var(--inspire2);
+}
+
+/* CSS */
+.btn-new {
+  background-color: var(--inspire1);
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+
+.btn-new:after {
+  background-clip: padding-box;
+  background-color: var(--inspire3);
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.btn-new:hover {
+  background-color: var(--inspire5);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+ 
+}
+
+.btn-new:active {
+  border-width: 4px 0 0;
+  background-color: var(--inspire1);
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+/* Stylish headings */
+h1{
+  color: var(--inspire4);
+}
+
+h2{
+  color :var(--inspire3);
+}
+
+h3{
+  color: var(--inspire1);
+}

@@ -1,0 +1,9 @@
+---
+title: "First InspireHer Workshop"
+author: "Sruthi Gandhiramanathan"
+date: 2025-04-10
+categories: [InspireHer, Workshops]
+format: html
+---
+
+We hosted 1st event yayayayayay!
