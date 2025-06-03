@@ -15,7 +15,6 @@ website:
         text: BLOG
       - href: team.qmd
         text: TEAM
-        
 
 format:
   html:
@@ -23,7 +22,3 @@ format:
       - cosmo
       - brand
     css: styles.css
-<<<<<<< HEAD
-
-=======
->>>>>>> 52cd2236ed5c5d3e010cd07f9fdf4b245ce24004
