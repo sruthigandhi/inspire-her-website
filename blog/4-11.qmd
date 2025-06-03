@@ -1,0 +1,9 @@
+---
+title: "Second InspireHer Workshop"
+author: "Sruthi Gandhiramanathan"
+date: 2025-04-11
+categories: [InspireHer, Workshops]
+format: html
+---
+
+We hosted our 2nd event whoohoohooohoo!

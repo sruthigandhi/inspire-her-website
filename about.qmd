@@ -1,0 +1,46 @@
+---
+title: "About"
+format: 
+  html:
+    toc: true
+    toc-location: left
+editor: source
+---
+
+## Our Misson and Vision
+
+[At InspireHER, our mission is to empower young girls through STEM education and mentorship while advocating for a greater representation of females in the STEM industry. We envision a world where every girl feels confident to pursue her interests in science, technology, engineering, and mathematics, breaking barriers and creating opportunities for herself and others. While rooted in STEM, our programs also connect with fields such as business and medicine to broaden impact.]{.black-text}
+
+## Format of InspireHER
+
+InspireHER operates through a hybrid model combining virtual and in-person programming. The structure is designed to ensure flexibility, accessibility, and regional engagement while maintaining a cohesive national identity.
+
+### Virtual Programming
+
+-   Open to all students regardless of geographic location.\
+-   Includes STEM workshops, speaker events, leadership sessions, and career panels.\
+-   Organized and led by the Executive Team and regional ambassadors.\
+-   Promoted with the help of the Ambassador team.
+
+### In-Person Events
+
+-   Region-specific and managed by local ambassadors.\
+-   Hosted at schools, libraries, community centers, etc.\
+-   Examples include hands-on STEM experiments, guest speaker visits, and mentoring sessions.
+
+### Chapters and Regions
+
+-   InspireHER is divided into regional chapters led by Regional Ambassadors.\
+-   Each chapter is responsible for local recruitment, event planning, and outreach.\
+-   Regional roles include:
+    -   **Regional Coordinator:** Leads the chapter, coordinates with the Executive Team.\
+    -   **Marketing Ambassador:** Promotes local and virtual events.\
+    -   **Program & Events Ambassador:** Plans and executes chapter events.
+
+### Internal Communication and Time Commitment
+
+-   This varies based on your position. Contact Sruthi Gandhi at sruthi.gandhi\@outlook.com to learn more.
+
+## Our Story
+
+[InspireHer started with a simple idea: to inspire the next generation of female leaders in STEM. It began with Sruthi's passion for these fields and the recognition at her first engineering class, where she was 1 of 4 girls in the whole class. She wanted to create a supportive community where girls could be inspired, and they could connect, learn, and grow. Since its founding in December 2024, InspireHer has been dedicated to fostering a love for STEM among young girls.]{.black-text}

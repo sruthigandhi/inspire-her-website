@@ -1,0 +1,39 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "![](logocolor.png){fig-align=\"center\" width=\"310\"}\n",
+        "\n",
+        "\n",
+        "\n",
+        "```{css}\n",
+        "#| echo: false\n",
+        "p {\n",
+        "  text-align: justify\n",
+        "}\n",
+        "```\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "# Empower the Next Generation\n",
+        "\n",
+        "InspireHER is a community-driven program inspiring young girls to explore STEM, leadership, and innovation through fun, hands-on learning.\n",
+        "\n",
+        "[Join Us Today](join.qmd){.btn .btn-primary}"
+      ],
+      "id": "4813daf9"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

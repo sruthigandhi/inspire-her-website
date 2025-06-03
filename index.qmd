@@ -1,0 +1,29 @@
+---
+format: 
+  html:
+    toc: false
+editor: source
+---
+```{=html}
+<style>
+  body {
+  background-image: url("bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-color: white;
+}
+  
+</style>
+```
+
+![](logotrans.png){#Logo fig-align="right" width="1000"}
+
+<center>
+
+<div class = "white-text">
+**InspireHER is a community-driven program inspiring young girls to explore STEM, leadership, and innovation through fun, hands-on learning.**
+</div>
+[Join Us Today](join.qmd){.btn .btn-new}
+
+
+</center>
