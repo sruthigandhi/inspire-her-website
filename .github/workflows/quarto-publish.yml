@@ -23,7 +23,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Ensures full history for Quarto
+          fetch-depth: 0
 
       - name: Debug repository contents
         run: |
@@ -33,46 +33,26 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: '1.5.57' # Specify a known stable version
+          version: '1.5.57'
 
       - name: Debug Quarto installation
         run: |
           quarto --version
           quarto check
 
-      - name: Set up R
-        uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: '4.4.1' # Recent stable R version
-          use-public-rspm: true
-
-      - name: Cache renv packages
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-renv-
-
-      - name: Install R dependencies
-        uses: r-lib/actions/setup-renv@v2
-        with:
-          cache-version: 1
-
-      - name: Debug renv
-        run: |
-          Rscript -e "renv::diagnostics()"
-          Rscript -e "sessionInfo()"
-
-      - name: Set up Python (optional)
+      - name: Set up Python (if needed)
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11' # Specify a version for reliability
+          python-version: '3.11'
+
+      - name: Install Python dependencies (if needed)
+        run: |
+          pip install jupyter
+          pip install -r requirements.txt || echo "No requirements.txt found"
 
       - name: Render Quarto site
         run: |
           quarto render --verbose
-        continue-on-error: true # Allow workflow to continue to capture output
 
       - name: Debug site contents
         run: |
