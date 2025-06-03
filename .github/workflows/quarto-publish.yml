@@ -22,28 +22,62 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Ensures full history for Quarto
+
+      - name: Debug repository contents
+        run: |
+          echo "Listing repository contents:"
+          ls -la
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: stable
+          version: '1.5.57' # Specify a known stable version
+
+      - name: Debug Quarto installation
+        run: |
+          quarto --version
+          quarto check
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
         with:
+          r-version: '4.4.1' # Recent stable R version
           use-public-rspm: true
+
+      - name: Cache renv packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
 
       - name: Install R dependencies
         uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 1
+
+      - name: Debug renv
+        run: |
+          Rscript -e "renv::diagnostics()"
+          Rscript -e "sessionInfo()"
 
       - name: Set up Python (optional)
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.11' # Specify a version for reliability
 
       - name: Render Quarto site
         run: |
-          quarto render
+          quarto render --verbose
+        continue-on-error: true # Allow workflow to continue to capture output
+
+      - name: Debug site contents
+        run: |
+          echo "Listing _site contents:"
+          ls -la _site || echo "_site directory not found"
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
